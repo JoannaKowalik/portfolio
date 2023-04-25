@@ -55,7 +55,7 @@ const Home = () => {
           textDecoration: "none",
         }}
         component={RouterLink}
-        to="/portfolio"
+        to="/stills"
       >
         <ButtonMore />
       </Box>

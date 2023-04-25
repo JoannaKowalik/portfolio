@@ -93,7 +93,7 @@ const Navbar = () => {
                   </ListItem>
                   <ListItem
                     component={Link}
-                    to="/portfolio"
+                    to="/stills"
                     onClick={handleDrawerToggle}
                     sx={{ color: "#000" }}
                   >
@@ -130,7 +130,7 @@ const Navbar = () => {
                 <Typography sx={{ color: "#000" }}>Home</Typography>
               </Link>
               <Link
-                to="/portfolio"
+                to="/stills"
                 style={{ marginRight: 20, textDecoration: "none" }}
               >
                 <Typography sx={{ color: "#000" }}>Portfolio</Typography>
