@@ -79,10 +79,7 @@ const About = () => {
             M.Sc. Architecture-Typology at Technical University in Berlin,
             Germany (2021)
           </li>
-          <li>
-            B.Arch Architecture at University of Fine Arts in Poznań, Poland
-            (2016)
-          </li>
+          <li>B.Arch at University of Fine Arts in Poznań, Poland (2016)</li>
           <li>
             B.A. Interior Design at Academy of Fine Arts in Gdańsk, Poland
             (2012)

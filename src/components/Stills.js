@@ -1,5 +1,15 @@
 import React from "react";
-import { Box, ImageList, ImageListItem, ImageListItemBar } from "@mui/material";
+import { useState } from "react";
+import {
+  Box,
+  ImageList,
+  ImageListItem,
+  ImageListItemBar,
+  CardActionArea,
+  Dialog,
+} from "@mui/material";
+import { useMediaQuery } from "@mui/material";
+import Image from "./Image";
 
 import Image6 from "../images/6.png";
 import Image7 from "../images/7.jpg";
@@ -70,6 +80,7 @@ const itemData = [
   {
     img: Image33,
     title: "Image33",
+    author: "Client: private",
   },
   {
     img: Image9,
@@ -151,29 +162,56 @@ const itemData = [
 ];
 
 const Stills = () => {
+  const [open, setOpen] = useState(false);
+  const [selectedItem, setSelectedItem] = useState(null);
+  const isSmallScreen = useMediaQuery("(max-width:600px)");
+  const isMediumScreen = useMediaQuery(
+    "(min-width: 601px) and (max-width: 1000px)"
+  );
+
+  const handleClickOpen = (item) => {
+    setSelectedItem(item);
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
     <Box
       sx={{
         mt: 10,
-
         width: "100%",
         height: "100%",
         overflowY: "scroll",
       }}
     >
-      <ImageList variant="masonry" cols={3} gap={8}>
+      <ImageList
+        variant="masonry"
+        cols={isSmallScreen ? 1 : isMediumScreen ? 2 : 3}
+        gap={8}
+      >
         {itemData.map((item) => (
-          <ImageListItem key={item.img}>
-            <img
-              src={`${item.img}?w=248&fit=crop&auto=format`}
-              srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-              alt={item.title}
-              loading="lazy"
-            />
-            <ImageListItemBar position="below" title={item.author} />
-          </ImageListItem>
+          <div key={item.img}>
+            <CardActionArea onClick={() => handleClickOpen(item)}>
+              <ImageListItem>
+                <img
+                  src={`${item.img}?w=248&fit=crop&auto=format`}
+                  srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                  alt={item.title}
+                  loading="lazy"
+                />
+
+                <ImageListItemBar position="below" title={item.author} />
+              </ImageListItem>
+            </CardActionArea>
+          </div>
         ))}
       </ImageList>
+      <Dialog open={open} onClose={handleClose} maxWidth="100vw">
+        {selectedItem && <Image selectedItem={selectedItem} />}
+      </Dialog>
     </Box>
   );
 };

@@ -13,7 +13,7 @@ const ButtonMore = () => {
         backgroundColor: "#283a43",
       }}
     >
-      <Typography sx={{ textDecoration: "none" }}>More</Typography>
+      <Typography sx={{ textDecoration: "none" }}>Portfolio</Typography>
     </Button>
   );
 };
