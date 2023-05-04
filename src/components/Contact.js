@@ -155,6 +155,10 @@ const Contact = () => {
                   backgroundColor: "#283a43",
                   mt: 3.7,
                   justifyContent: "center",
+                  "&:hover": {
+                    borderColor: "#283a43",
+                    color: "#283a43",
+                  },
                 }}
               >
                 <Typography sx={{ textDecoration: "none" }}>Send</Typography>
