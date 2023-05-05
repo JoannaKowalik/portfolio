@@ -7,6 +7,11 @@ import {
   TextField,
   Button,
   useMediaQuery,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogContentText,
+  DialogActions,
 } from "@mui/material";
 import ContactImage from "../images/5_Contact.jpg";
 
@@ -18,11 +23,25 @@ const Contact = () => {
     reply_to: "",
   });
 
+  const [sent, setSent] = useState(false); // define the sent variable and set it to false
+
+  const handleClose = () => {
+    setSent(false); // set sent to false to hide the dialog
+  };
+
   const onSubmit = (e) => {
     e.preventDefault();
     send("service_eja2kq1", "template_b1h36zb", toSend, "DRroXFZ1KNWqnagFK")
       .then((response) => {
         console.log("SUCCESS!", response.status, response.text);
+        setSent(true); // set sent to true to display the dialog
+        setToSend({
+          // reset the form
+          from_name: "",
+          to_name: "",
+          message: "",
+          reply_to: "",
+        });
       })
       .catch((err) => {
         console.log("FAILED...", err);
@@ -172,6 +191,40 @@ const Contact = () => {
                 <Typography sx={{ textDecoration: "none" }}>Send</Typography>
               </Button>
             </Box>
+            {sent && (
+              <Dialog open={sent} onClose={handleClose} maxWidth="sm">
+                <DialogTitle textAlign="center">
+                  Thank you for your message!
+                </DialogTitle>
+                <DialogContent textAlign="center">
+                  <DialogContentText>
+                    We appreciate your feedback and will get back to you as soon
+                    as possible.
+                  </DialogContentText>
+                </DialogContent>
+                <DialogActions sx={{ justifyContent: "center" }}>
+                  <Button
+                    alignItems="center"
+                    onClick={handleClose}
+                    color="primary"
+                    sx={{
+                      width: "200px",
+                      border: "1px solid",
+                      fontWeight: "bold",
+                      backgroundColor: "#283a43",
+                      mt: 3.7,
+
+                      "&:hover": {
+                        borderColor: "#283a43",
+                        color: "#283a43",
+                      },
+                    }}
+                  >
+                    OK
+                  </Button>
+                </DialogActions>
+              </Dialog>
+            )}
           </Box>
         </form>
       </Box>
