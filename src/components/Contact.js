@@ -1,7 +1,13 @@
 import React from "react";
 import { useState } from "react";
 import { send } from "emailjs-com";
-import { Box, Typography, TextField, Button } from "@mui/material";
+import {
+  Box,
+  Typography,
+  TextField,
+  Button,
+  useMediaQuery,
+} from "@mui/material";
 import ContactImage from "../images/5_Contact.jpg";
 
 const Contact = () => {
@@ -26,6 +32,9 @@ const Contact = () => {
   const handleChange = (e) => {
     setToSend({ ...toSend, [e.target.name]: e.target.value });
   };
+
+  const isSmallScreen = useMediaQuery("(max-width:600px)");
+
   return (
     <Box
       className="about-container"
@@ -34,11 +43,10 @@ const Contact = () => {
         flexDirection: "row",
         justifyContent: "center",
         alignItems: "center",
-
-        height: "80vh",
-        marginLeft: 10,
-        marginRight: 10,
         marginTop: 13,
+        height: "80vh",
+        marginLeft: isSmallScreen ? 5 : 10,
+        marginRight: isSmallScreen ? 5 : 10,
       }}
     >
       <Box
