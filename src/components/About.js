@@ -1,9 +1,10 @@
 import React from "react";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useMediaQuery } from "@mui/material";
 import AboutImage from "../images/2_About.jpg";
 import "../App.css";
 
 const About = () => {
+  const isSmallScreen = useMediaQuery("(max-width:600px)");
   return (
     <Box
       className="about-container"
@@ -16,8 +17,8 @@ const About = () => {
         backgroundSize: "cover",
         backgroundPosition: "center",
         height: "80vh",
-        marginLeft: 10,
-        marginRight: 10,
+        marginLeft: isSmallScreen ? 5 : 10,
+        marginRight: isSmallScreen ? 5 : 10,
         marginTop: 13,
       }}
     >
