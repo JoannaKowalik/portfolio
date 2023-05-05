@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Box } from "@mui/material";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import Portfolio from "./components/Portfolio";
@@ -8,6 +9,7 @@ import Stills from "./components/Stills";
 import Motion from "./components/Motion";
 import Privacy from "./components/Privacy";
 import Footer from "./components/Footer";
+import Imprint from "./components/Imprint";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 
@@ -59,8 +61,11 @@ function App() {
           <Route path="/stills" element={<Stills />} />
           <Route path="/motion" element={<Motion />} />
           <Route path="/privacy" element={<Privacy />} />
+          <Route path="/imprint" element={<Imprint />} />
         </Routes>
-        <Footer />
+        <Box position="sticky">
+          <Footer />
+        </Box>
       </BrowserRouter>
     </ThemeProvider>
   );

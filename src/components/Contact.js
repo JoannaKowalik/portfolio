@@ -44,7 +44,7 @@ const Contact = () => {
         justifyContent: "center",
         alignItems: "center",
         marginTop: 13,
-        height: "80vh",
+
         marginLeft: isSmallScreen ? 5 : 10,
         marginRight: isSmallScreen ? 5 : 10,
       }}
@@ -53,7 +53,7 @@ const Contact = () => {
         className="about-box"
         sx={{
           width: "50%",
-          height: "100%",
+          height: "80vh",
           mr: 1,
           backgroundImage: `url(${ContactImage})`,
           backgroundSize: "cover",

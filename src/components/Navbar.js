@@ -5,8 +5,6 @@ import {
   Box,
   Toolbar,
   Typography,
-  // FormControl,
-  // Select,
   MenuItem,
   useMediaQuery,
   IconButton,
@@ -18,13 +16,7 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 
 const Navbar = () => {
-  // const [language, setLanguage] = useState("en");
   const [drawerOpen, setDrawerOpen] = useState(false);
-
-  // const handleLanguage = (language) => {
-  //   setLanguage(language);
-  //   console.log(language);
-  // };
 
   const handleDrawerToggle = () => {
     setDrawerOpen(!drawerOpen);
@@ -55,17 +47,6 @@ const Navbar = () => {
                 Joanna Kowalik
               </Typography>
             </MenuItem>
-            {/* <FormControl size="small" sx={{ m: 1, minWidth: 50 }}>
-              <Select
-                value={language}
-                onChange={(event) => handleLanguage(event.target.value)}
-                displayEmpty
-                inputProps={{ "aria-label": "Without label" }}
-              >
-                <MenuItem value="en">EN</MenuItem>
-                <MenuItem value="de">DE</MenuItem>
-              </Select>
-            </FormControl> */}
           </Box>
           {isMobile ? (
             <>

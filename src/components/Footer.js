@@ -1,22 +1,29 @@
-import {
-  Typography,
-  Box,
-  BottomNavigation,
-  BottomNavigationAction,
-} from "@mui/material";
 import React from "react";
-import Privacy from "./Privacy";
+import { Typography, Box } from "@mui/material";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <Box fullwidth sx={{ height: "50px" }}>
-      <BottomNavigation>
-        <BottomNavigationAction>
-          <Typography>
-            PRIVACY <Privacy />
+    <Box textAlign="center">
+      <Box sx={{ mt: 3, mb: 3 }}>
+        <Typography>© 2023 Joanna Kowalik</Typography>
+        <Box display="flex" justifyContent="center">
+          <Typography
+            component={Link}
+            to="/privacy"
+            sx={{ mr: 1, color: "#000" }}
+          >
+            Privacy policy
           </Typography>
-        </BottomNavigationAction>
-      </BottomNavigation>
+          <Typography
+            component={Link}
+            to="/imprint"
+            sx={{ ml: 1, color: "#000" }}
+          >
+            Imprint
+          </Typography>
+        </Box>
+      </Box>
     </Box>
   );
 };

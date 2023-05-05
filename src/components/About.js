@@ -13,10 +13,6 @@ const About = () => {
         flexDirection: "row",
         justifyContent: "center",
         alignItems: "center",
-
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        height: "80vh",
         marginLeft: isSmallScreen ? 5 : 10,
         marginRight: isSmallScreen ? 5 : 10,
         marginTop: 13,
@@ -26,7 +22,7 @@ const About = () => {
         className="about-box"
         sx={{
           width: "50%",
-          height: "100%",
+          height: "80vh",
           mr: 1,
           backgroundImage: `url(${AboutImage})`,
           backgroundSize: "cover",
@@ -46,7 +42,6 @@ const About = () => {
           sx={{
             fontFamily: "Cinzel",
             fontSize: 40,
-
             mb: 3,
             color: "#000",
           }}
