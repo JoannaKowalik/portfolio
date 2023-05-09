@@ -35,6 +35,12 @@ import Image30 from "../images/30.jpg";
 import Image31 from "../images/31.jpg";
 import Image32 from "../images/32.jpg";
 import Image33 from "../images/33.jpg";
+import Image35 from "../images/35.jpg";
+import Image36 from "../images/36.jpg";
+import Image37 from "../images/37.png";
+import Image38 from "../images/38.jpg";
+import Image39 from "../images/39.jpg";
+import Image40 from "../images/40.jpg";
 
 const itemData = [
   {
@@ -157,6 +163,36 @@ const itemData = [
   {
     img: Image32,
     title: "Image32",
+    author: "Client: private",
+  },
+  {
+    img: Image35,
+    title: "Image35",
+    author: "Client: Golfblocks GmbH",
+  },
+  {
+    img: Image36,
+    title: "Image36",
+    author: "Client: Golfblocks GmbH",
+  },
+  {
+    img: Image37,
+    title: "Image37",
+    author: "Client: Golfblocks GmbH",
+  },
+  {
+    img: Image38,
+    title: "Image38",
+    author: "Client: Blauform GmbH",
+  },
+  {
+    img: Image39,
+    title: "Image39",
+    author: "Client: Blauform GmbH",
+  },
+  {
+    img: Image40,
+    title: "Image40",
     author: "Client: private",
   },
 ];
